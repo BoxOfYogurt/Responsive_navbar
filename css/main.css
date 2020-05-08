@@ -8,7 +8,7 @@
     --icon-clr-primary: #9670e0;
     --icon-clr-secondary: #6c42bd;
     --main-clr: #ebdff5;
-    --select-clr: #53475c;
+    --select-clr: #dea4de;
     --transition-spd: 200ms;
     font-family: 'Jost', sans-serif;
     font-size: var(--fs);
@@ -23,6 +23,11 @@ h1,
 h2,
 h3 {
     font-weight: 200;
+}
+
+svg {
+    padding: 0;
+    height: 100%;
 }
 
 /*--------------------{GRID}--------------------*/
@@ -69,6 +74,11 @@ h3 {
     width: 16rem;
 }
 
+.navbar-nav:hover .logo svg {
+    margin-left: 11.5rem;
+    transform: rotate(225deg);
+}
+
 .link-text {
     visibility: hidden;
 }
@@ -76,44 +86,62 @@ h3 {
 .navbar-nav:hover .link-text {
     display: block;
     transition: 200ms;
-    transition-delay: 100ms;
+    transition-delay: 90ms;
     visibility: visible;
     transform: translateX(10px);
 }
 
+.logo-text {
+    transition: var(--transition-spd);
+    text-transform: uppercase;
+    opacity: 0;
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 0.2ch;
+    transform: translateX(-20px);
+}
+
+.navbar-nav:hover .logo-text {
+    display: block;
+    transition: 0.5s;
+    transition-delay: 250ms;
+    visibility: visible;
+    transform: translateX(10px);
+    opacity: 1;
+}
+
+
+/*--------------------{NAVBAR-ITEMS}--------------------*/
+.nav-item {
+    width: 100%;
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+
+}
+
+/*--------------------{LOGO}--------------------*/
 .logo {
     width: 100%;
 }
 
 .logo svg {
+    position: absolute;
     transform: rotate(0deg);
-    transition: transform var(--transition-spd);
+    transition: var(--transition-spd);
 
 }
 
-.navbar-nav:hover .logo svg {
-    transform: rotate(180deg);
-}
-
-.nav-item {
-    width: 100%;
-}
-
-.nav-item:first-child {
-    background-color: var(--nav-clr-main);
-}
-
-.nav-item:last-child {
-    margin-top: auto;
-    background-color: var(--nav-clr-main);
-}
-
+/*--------------------{NAVBAR-LINK--------------------*/
 .nav-link {
     display: flex;
+    position: relative;
     align-items: center;
     height: 5rem;
     color: var(--main-clr);
     text-decoration: none;
+    transition: var(--transition-spd);
 }
 
 
@@ -135,7 +163,7 @@ h3 {
 }
 
 .nav-item:hover .fa-primary {
-    fill: red;
+    fill: var(--select-clr);
 }
 
 
@@ -148,4 +176,5 @@ h3 {
 
 
 
-/*--------------------{SOME INFORMATION}--------------------*/
+/*--------------------{lOGO}--------------------*/
+@media screen and min-width(0)
